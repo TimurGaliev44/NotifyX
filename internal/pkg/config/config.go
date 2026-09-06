@@ -8,6 +8,7 @@ import (
 )
 
 type Config struct {
+	HTTPaddr    string   `env:"HTTP_ADDR" envDefault:":8080"`
 	PostgresDSN string   `env:"CONN_STRING,required"`
 	RedisAddr   string   `env:"REDIS_CONN,required"`
 	KafkaAddrs  []string `env:"KAFKA_CONN,required"`
