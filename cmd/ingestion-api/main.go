@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"log"
 	"log/slog"
 	"net/http"
@@ -66,6 +67,10 @@ func main() {
 
 	go func() {
 		if err := server.ListenAndServe(); err != nil {
+			if errors.Is(err, http.ErrServerClosed) {
+				log.Info("server closed")
+				os.Exit(0)
+			}
 			log.Error("failed to start server: %v", err)
 			os.Exit(1)
 		}
