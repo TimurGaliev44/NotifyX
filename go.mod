@@ -5,6 +5,7 @@ go 1.27.0
 require (
 	github.com/IBM/sarama v1.60.2
 	github.com/caarlos0/env v3.5.0+incompatible
+	github.com/go-chi/chi/v5 v5.3.2
 	github.com/jackc/pgx/v5 v5.10.0
 	github.com/joho/godotenv v1.5.1
 	github.com/redis/go-redis/v9 v9.22.0
